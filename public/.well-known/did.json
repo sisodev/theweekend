@@ -1,0 +1,48 @@
+{
+    "id": "did:web:victorious-field-01d97fb10.2.azurestaticapps.net",
+    "@context": [
+      "https://www.w3.org/ns/did/v1",
+      {
+        "@base": "did:web:victorious-field-01d97fb10.2.azurestaticapps.net"
+      }
+    ],
+    "service": [
+      {
+        "id": "#linkeddomains",
+        "type": "LinkedDomains",
+        "serviceEndpoint": {
+          "origins": [
+            "https://victorious-field-01d97fb10.2.azurestaticapps.net/"
+          ]
+        }
+      },
+      {
+        "id": "#hub",
+        "type": "IdentityHub",
+        "serviceEndpoint": {
+          "instances": [
+            "https://hub.did.msidentity.com/v1.0/e402e326-230b-414f-a639-14738eff3767"
+          ]
+        }
+      }
+    ],
+    "verificationMethod": [
+      {
+        "id": "#334efe89d6aa46568fb026002b1473f6vcSigningKey-981a9",
+        "controller": "did:web:victorious-field-01d97fb10.2.azurestaticapps.net",
+        "type": "EcdsaSecp256k1VerificationKey2019",
+        "publicKeyJwk": {
+          "crv": "secp256k1",
+          "kty": "EC",
+          "x": "48iLdQNLHDLPw2fsjNrxhBX4fj3H2G0XtP5LZJItFss",
+          "y": "aJuXnUojvhlVQyzXEHyjmOTZRfaL52TXdyJnyq4vwAg"
+        }
+      }
+    ],
+    "authentication": [
+      "#334efe89d6aa46568fb026002b1473f6vcSigningKey-981a9"
+    ],
+    "assertionMethod": [
+      "#334efe89d6aa46568fb026002b1473f6vcSigningKey-981a9"
+    ]
+  }
