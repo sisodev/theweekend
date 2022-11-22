@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function PostList({posts}) {
     return (
         <div>
@@ -5,7 +7,9 @@ export default function PostList({posts}) {
             {posts.map(post => {
                 return (
                     <div key={post.id}>
-                        <h2>{post.title}</h2>
+                        <Link href={`posts/${post.id}`}>
+                            <h2>{post.title}</h2>
+                        </Link>
                         <hr/>
                     </div>
                 )
