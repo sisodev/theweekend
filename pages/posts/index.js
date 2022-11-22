@@ -7,7 +7,7 @@ export default function PostList({posts}) {
             {posts.map(post => {
                 return (
                     <div key={post.id}>
-                        <Link href={`posts/${post.id}`}>
+                        <Link href={`posts/${post.id}`} passHref>
                             <h2>{post.title}</h2>
                         </Link>
                         <hr/>
@@ -26,5 +26,22 @@ export async function getStaticProps() {
         props : {
             posts: data.slice(0,3)
         }
+    }
+}
+
+export async function getStaticPaths() {
+    return {
+        paths: [
+            {
+                params: {postId: '1'}
+            },
+            {
+                params: {postId: '2'}
+            },
+            {
+                params: {postId: '3'}
+            }
+        ],
+        fallback: false
     }
 }
