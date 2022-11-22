@@ -2,7 +2,7 @@ import { useRouter } from "next/router"
 
 export default function Post({post}) {
     const router = useRouter()
-    if(router.isFallback()){
+    if(router.isFallback){
         return <h1>Loading....</h1>
     }
     return(
@@ -32,9 +32,9 @@ export async function getStaticPaths() {
     // })
     return {
         paths: [
-            {params: {poastId: '1'}},
-            {params: {poastId: '2'}},
-            {params: {poastId: '3'}},
+            {params: {postId: '1'}},
+            {params: {postId: '2'}},
+            {params: {postId: '3'}},
         ],
         fallback: true
     }
